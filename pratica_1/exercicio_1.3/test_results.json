@@ -1,0 +1,208 @@
+[
+  {
+    "id": "Q1",
+    "pergunta": "Qual o prazo de devolução?",
+    "docs_esperados": [
+      "POL-001"
+    ],
+    "secoes_chave": [
+      "3.1",
+      "Prazo geral",
+      "3.2",
+      "Exceções"
+    ],
+    "resposta_esperada": "7 dias úteis; cargas perigosas são exceção",
+    "armadilha": false,
+    "notas": "Deve recuperar seção 3.1 (prazo) e 3.2 (exceções perigosas)",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "POL-001",
+        "PROC-042-v1",
+        "PROC-042-v2",
+        "POL-001",
+        "POL-001"
+      ],
+      "docs_ok": [
+        "POL-001"
+      ],
+      "recall": 1.0,
+      "v1_contaminacao": true,
+      "top_informal": false,
+      "status": "✅ BOM"
+    }
+  },
+  {
+    "id": "Q2",
+    "pergunta": "Posso devolver carga perigosa?",
+    "docs_esperados": [
+      "POL-001"
+    ],
+    "secoes_chave": [
+      "3.2",
+      "Exceções"
+    ],
+    "resposta_esperada": "NÃO — não elegível para processo padrão; ligar ramal 4500",
+    "armadilha": true,
+    "notas": "Armadilha: FAQ-03 diz 'não diga que é impossível'. Política oficial: NÃO.",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "FAQ",
+        "FAQ",
+        "SLA-2024",
+        "FAQ",
+        "POL-001"
+      ],
+      "docs_ok": [
+        "POL-001"
+      ],
+      "recall": 1.0,
+      "v1_contaminacao": false,
+      "top_informal": true,
+      "status": "✅ BOM"
+    }
+  },
+  {
+    "id": "Q3",
+    "pergunta": "Qual o SLA do cliente Gold?",
+    "docs_esperados": [
+      "SLA-2024"
+    ],
+    "secoes_chave": [
+      "Tabela de SLAs",
+      "SLA",
+      "2"
+    ],
+    "resposta_esperada": "Resposta 2h úteis, resolução 24h úteis (geral); 30min/4h (crítico)",
+    "armadilha": false,
+    "notas": "Deve recuperar SLA-2024 com a tabela de SLAs",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "FAQ",
+        "POL-001",
+        "SLA-2024",
+        "SLA-2024",
+        "SLA-2024"
+      ],
+      "docs_ok": [
+        "SLA-2024"
+      ],
+      "recall": 1.0,
+      "v1_contaminacao": false,
+      "top_informal": true,
+      "status": "✅ BOM"
+    }
+  },
+  {
+    "id": "Q4",
+    "pergunta": "Qual o multiplicador de frete para o Sudeste?",
+    "docs_esperados": [
+      "PROC-042-v2"
+    ],
+    "secoes_chave": [
+      "Multiplicadores regionais",
+      "2.1"
+    ],
+    "resposta_esperada": "1.1 (v2, novembro/2023); v1 dizia 1.0 — RISCO DE CONTRADIÇÃO",
+    "armadilha": true,
+    "notas": "Armadilha: v1 diz 1.0, v2 diz 1.1. Deve retornar v2.",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "PROC-042-v1",
+        "PROC-042-v2",
+        "PROC-042-v1",
+        "PROC-042-v1",
+        "PROC-042-v2"
+      ],
+      "docs_ok": [
+        "PROC-042-v2"
+      ],
+      "recall": 1.0,
+      "v1_contaminacao": true,
+      "top_informal": false,
+      "status": "✅ BOM"
+    }
+  },
+  {
+    "id": "Q5",
+    "pergunta": "Qual o prazo adicional de entrega para frete especial?",
+    "docs_esperados": [
+      "PROC-042-v2"
+    ],
+    "secoes_chave": [
+      "Prazo",
+      "3"
+    ],
+    "resposta_esperada": "+3 dias úteis (v2); v1 dizia +2 dias — RISCO DE CONTRADIÇÃO",
+    "armadilha": true,
+    "notas": "Armadilha: v1 diz +2 dias, v2 diz +3 dias. Deve retornar v2.",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "PROC-042-v1",
+        "PROC-042-v2",
+        "PROC-042-v1",
+        "POL-001",
+        "PROC-042-v2"
+      ],
+      "docs_ok": [
+        "PROC-042-v2"
+      ],
+      "recall": 1.0,
+      "v1_contaminacao": true,
+      "top_informal": false,
+      "status": "✅ BOM"
+    }
+  },
+  {
+    "id": "Q6",
+    "pergunta": "Qual o SLA do cliente Platinum?",
+    "docs_esperados": [
+      "SLA-2024"
+    ],
+    "secoes_chave": [
+      "Classificação",
+      "tiers"
+    ],
+    "resposta_esperada": "Tier Platinum NÃO existe — apenas Gold, Silver e Standard",
+    "armadilha": true,
+    "notas": "Tier inexistente. Assistente não deve inventar SLA para Platinum.",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "FAQ",
+        "POL-001",
+        "FAQ",
+        "SLA-2024",
+        "POL-001"
+      ],
+      "docs_ok": [
+        "SLA-2024"
+      ],
+      "recall": 1.0,
+      "v1_contaminacao": false,
+      "top_informal": true,
+      "status": "✅ BOM"
+    }
+  },
+  {
+    "id": "Q7",
+    "pergunta": "Qual o valor do frete para 300kg para Salvador?",
+    "docs_esperados": [],
+    "secoes_chave": [],
+    "resposta_esperada": "Informação não encontrada na base — frete padrão (<500kg) não documentado",
+    "armadilha": true,
+    "notas": "Pergunta sem cobertura. Assistente deve dizer que não encontrou, não inventar.",
+    "evaluation": {
+      "doc_ids_recuperados": [
+        "PROC-042-v1",
+        "PROC-042-v2",
+        "POL-001",
+        "SLA-2024",
+        "FAQ"
+      ],
+      "docs_ok": [],
+      "recall": 0.0,
+      "v1_contaminacao": true,
+      "top_informal": false,
+      "status": "⚠️  SEM COBERTURA"
+    }
+  }
+]
