@@ -1,0 +1,411 @@
+
+======================================================================
+TESTE Q1: Qual o prazo de devolução?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | POL-001 v3.1 | Seção: 3. Regras de Devolução | Similaridade: 33%]
+## 3. Regras de Devolução
+
+[TRECHO 2 | PROC-042-v1 v1.0 | Seção: 3. Prazo de entrega para frete especial | Similaridade: 24%]
+## 3. Prazo de entrega para frete especial
+
+O prazo de entrega para frete especial é calculado como o prazo padrão da rota + 2 dias úteis adicionais para manuseio de carga pesada.
+
+[TRECHO 3 | PROC-042-v2 v2.0 | Seção: 3. Prazo de entrega para frete especial | Similaridade: 21%]
+## 3. Prazo de entrega para frete especial
+
+O prazo de entrega para frete especial é calculado como o prazo padrão da rota + 3 dias úteis adicionais para manuseio e roteirização de carga pesada (anteriormente era + 2 dias na versão anterior).
+
+[TRECHO 4 | POL-001 v3.1 | Seção: 3.5. Custos de devolução | Similaridade: 11%]
+### 3.5. Custos de devolução
+
+- Defeito ou erro da NovaTech (carga errada, avaria em trânsito): devolução sem custo para o cliente.
+- Desistência do cliente (carga correta, sem defeito): o custo do frete reverso é do cliente, calculado com os mesmos multiplicadores do frete original.
+- Prazo expirado (solicitação após 7 dias úteis): não elegível para devolução padrão. Encaminhar ao Comercial para negociação caso a caso.
+
+[TRECHO 5 | POL-001 v3.1 | Seção: POL-001 — Política de Devolução de Mercadorias | Similaridade: 10%]
+# POL-001 — Política de Devolução de Mercadorias
+
+**Versão:** 3.1
+**Última atualização:** 15/01/2024
+**Responsável:** Diretoria de Operações
+**Classificação:** Documento normativo — uso obrigatório pelo time de atendimento
+
+
+---
+PERGUNTA DO ATENDENTE: Qual o prazo de devolução?
+
+RESPOSTA (com citação de fonte obrigatória):
+
+======================================================================
+TESTE Q2: Posso devolver carga perigosa?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | FAQ vinformal | Seção: Item 3 — "Cliente perguntou se pode devolver carga perigosa. O que respondo?" | Similaridade: 18% ⚠️ DOCUMENTO INFORMAL]
+### Item 3 — "Cliente perguntou se pode devolver carga perigosa. O que respondo?"
+Na prática, a gente orienta o cliente a ligar no ramal 4500 (Gestão de Riscos). Oficialmente não pode pelo processo padrão, mas já tiveram casos em que o pessoal de Riscos autorizou exceção. Então não diga que é impossível — diga que precisa de tratamento especial.
+
+[TRECHO 2 | FAQ vinformal | Seção: Item 32 — "Pode enviar carga perigosa com frete expresso?" | Similaridade: 9% ⚠️ DOCUMENTO INFORMAL]
+### Item 32 — "Pode enviar carga perigosa com frete expresso?"
+Sim, mas precisa de autorização do Compliance e a documentação ANTT tem que estar atualizada. Na prática, demora uns 2 dias para conseguir a autorização, então o 'expresso' acaba não sendo tão expresso. Avise o cliente sobre isso.
+
+[TRECHO 3 | SLA-2024 v2024.1 | Seção: 3. Definição de incidente crítico | Similaridade: 9%]
+## 3. Definição de incidente crítico
+
+Um incidente é classificado como crítico quando atende a pelo menos um dos seguintes critérios:
+
+- Carga com valor declarado acima de R$ 100.000 está com status desconhecido há mais de 6 horas.
+- Carga perigosa com qualquer irregularidade de documentação ou rastreamento.
+- Mais de 5 chamados do mesmo cliente nas últimas 24 horas sobre o mesmo problema.
+- Qualquer situação que envolva risco à segurança de pessoas.
+
+[TRECHO 4 | FAQ vinformal | Seção: Item 45 — "O cliente quer desconto no frete. Posso dar?" | Similaridade: 6% ⚠️ DOCUMENTO INFORMAL]
+### Item 45 — "O cliente quer desconto no frete. Posso dar?"
+Atendente não tem autonomia para dar desconto. Para clientes com mais de 10 fretes especiais por mês, existe desconto automático na tabela (veja PROC-042). Para outros casos, encaminhe ao Comercial com justificativa.
+
+[TRECHO 5 | POL-001 v3.1 | Seção: 3.4. Devoluções parciais | Similaridade: 5%]
+### 3.4. Devoluções parciais
+
+Quando a entrega envolver múltiplos volumes, o cliente pode devolver volumes individuais. Cada volume devolvido segue o mesmo procedimento da seção 3.3. O cálculo de reembolso é proporcional ao peso/valor do volume devolvido, conforme o CT-e.
+
+
+---
+PERGUNTA DO ATENDENTE: Posso devolver carga perigosa?
+
+RESPOSTA (com citação de fonte obrigatória):
+
+======================================================================
+TESTE Q3: Qual o SLA do cliente Gold?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | FAQ vinformal | Seção: Item 41 — "Qual a diferença entre SLA de resposta e SLA de resolução?" | Similaridade: 15% ⚠️ DOCUMENTO INFORMAL]
+### Item 41 — "Qual a diferença entre SLA de resposta e SLA de resolução?"
+Resposta é quando a gente dá o primeiro retorno ao cliente (mesmo que seja 'estamos verificando'). Resolução é quando o problema é efetivamente resolvido. O Gold tem 2h de resposta e 24h de resolução. Silver é 4h e 48h. Standard é 8h e 72h. Para incidentes críticos, os prazos são menores — veja a tabela SLA-2024.
+
+[TRECHO 2 | POL-001 v3.1 | Seção: 3.5. Custos de devolução | Similaridade: 13%]
+### 3.5. Custos de devolução
+
+- Defeito ou erro da NovaTech (carga errada, avaria em trânsito): devolução sem custo para o cliente.
+- Desistência do cliente (carga correta, sem defeito): o custo do frete reverso é do cliente, calculado com os mesmos multiplicadores do frete original.
+- Prazo expirado (solicitação após 7 dias úteis): não elegível para devolução padrão. Encaminhar ao Comercial para negociação caso a caso.
+
+[TRECHO 3 | SLA-2024 v2024.1 | Seção: SLA-2024 — Tabela de SLA por Tipo de Cliente | Similaridade: 9%]
+# SLA-2024 — Tabela de SLA por Tipo de Cliente
+
+**Versão:** 2024.1
+**Última atualização:** 02/01/2024
+**Responsável:** Diretoria Comercial + Diretoria de Operações
+**Classificação:** Documento contratual — os SLAs listados aqui são compromissos formais com o cliente
+
+[TRECHO 4 | SLA-2024 v2024.1 | Seção: 5. Medição e reportes | Similaridade: 9%]
+## 5. Medição e reportes
+
+Os SLAs são medidos pelo sistema de chamados (Azure DevOps) a partir do timestamp de abertura do chamado. O relógio de SLA pausa fora do horário comercial (08h-18h, dias úteis) para chamados gerais, mas não pausa para incidentes críticos de clientes Gold.
+
+[TRECHO 5 | SLA-2024 v2024.1 | Seção: 4. Penalidades por descumprimento | Similaridade: 8%]
+## 4. Penalidades por descumprimento
+
+- Primeira violação de SLA no mês: registro interno, sem impacto contratual.
+- Segunda violação no mesmo mês: crédito de 5% sobre o valor do frete do chamado afetado.
+- Terceira violação ou mais no mesmo mês: crédito de 10% + reunião obrigatória com o gerente de conta (Gold) ou gerente de operações (Silver/Standard).
+
+
+---
+PERGUNTA DO ATENDENTE: Qual o SLA do cliente Gold?
+
+RESPOSTA (com citação de fonte obrigatória):
+
+======================================================================
+TESTE Q4: Qual o multiplicador de frete para o Sudeste?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | PROC-042-v1 v1.0 | Seção: 2.1. Multiplicadores regionais | Similaridade: 18%]
+### 2.1. Multiplicadores regionais
+
+| Região | Multiplicador |
+|--------|--------------|
+| Sul | 1.2 |
+| Sudeste | 1.0 |
+| Centro-Oeste | 1.3 |
+| Nordeste | 1.4 |
+| Norte | 1.6 |
+
+[TRECHO 2 | PROC-042-v2 v2.0 | Seção: 2.1. Multiplicadores regionais (atualizados em novembro/2023) | Similaridade: 15%]
+### 2.1. Multiplicadores regionais (atualizados em novembro/2023)
+
+| Região | Multiplicador |
+|--------|--------------|
+| Sul | 1.3 |
+| Sudeste | 1.1 |
+| Centro-Oeste | 1.4 |
+| Nordeste | 1.5 |
+| Norte | 1.8 |
+
+[TRECHO 3 | PROC-042-v1 v1.0 | Seção: 1. Objetivo | Similaridade: 14%]
+## 1. Objetivo
+
+Definir a fórmula e os parâmetros para cálculo de frete especial aplicável a cargas com peso acima de 500kg.
+
+[TRECHO 4 | PROC-042-v1 v1.0 | Seção: 2. Fórmula de cálculo | Similaridade: 12%]
+## 2. Fórmula de cálculo
+
+O frete especial é calculado como:
+
+Valor do frete = Valor base × Multiplicador regional × Fator de peso
+
+Onde:
+- Valor base = tarifa publicada na tabela mensal de fretes.
+- Multiplicador regional = fator aplicado conforme a região de destino (seção 2.1).
+- Fator de peso = 1.0 para cargas de 500kg a 1.000kg; 1.2 para cargas de 1.001kg a 3.000kg; 1.5 para cargas acima de 3.000kg.
+
+[TRECHO 5 | PROC-042-v2 v2.0 | Seção: 2. Fórmula de cálculo | Similaridade: 12%]
+## 2. Fórmula de cálculo
+
+O frete especial é calculado como:
+
+Valor do frete = Valor base × Multiplicador regional × Fator de peso
+
+Onde:
+- Valor base = tarifa publicada na tabela mensal de fretes.
+- Multiplicador regional = fator aplicado conforme a região de destino (seção 2.1).
+- Fator de peso = 1.0 para cargas de 500kg a 1.000kg; 1.15 para cargas de 1.001kg a 3.000kg; 1.4 para cargas acima de 3.000kg.
+
+
+---
+PERGUNTA DO ATENDENTE: Qual o multiplicador de frete para o Sudeste?
+
+RESPOSTA (com citação de fonte obrigatória):
+
+======================================================================
+TESTE Q5: Qual o prazo adicional de entrega para frete especial?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | PROC-042-v1 v1.0 | Seção: 3. Prazo de entrega para frete especial | Similaridade: 53%]
+## 3. Prazo de entrega para frete especial
+
+O prazo de entrega para frete especial é calculado como o prazo padrão da rota + 2 dias úteis adicionais para manuseio de carga pesada.
+
+[TRECHO 2 | PROC-042-v2 v2.0 | Seção: 3. Prazo de entrega para frete especial | Similaridade: 45%]
+## 3. Prazo de entrega para frete especial
+
+O prazo de entrega para frete especial é calculado como o prazo padrão da rota + 3 dias úteis adicionais para manuseio e roteirização de carga pesada (anteriormente era + 2 dias na versão anterior).
+
+[TRECHO 3 | PROC-042-v1 v1.0 | Seção: 1. Objetivo | Similaridade: 11%]
+## 1. Objetivo
+
+Definir a fórmula e os parâmetros para cálculo de frete especial aplicável a cargas com peso acima de 500kg.
+
+[TRECHO 4 | POL-001 v3.1 | Seção: 3.2. Exceções ao prazo geral | Similaridade: 8%]
+alvo quando a violação for documentada no ato de entrega com assinatura do motorista e do recebedor.
+
+Para essas categorias, o cliente deve entrar em contato com o setor de Gestão de Riscos (ramal 4500) para tratamento individual.
+
+[TRECHO 5 | PROC-042-v2 v2.0 | Seção: 1. Objetivo | Similaridade: 8%]
+## 1. Objetivo
+
+Definir a fórmula e os parâmetros atualizados para cálculo de frete especial aplicável a cargas com peso acima de 500kg. Os multiplicadores foram revisados para refletir os custos operacionais atualizados de cada região.
+
+
+---
+PERGUNTA DO ATENDENTE: Qual o prazo adicional de entrega para frete especial?
+
+RESPOSTA (com citação de fonte obrigatória):
+
+======================================================================
+TESTE Q6: Qual o SLA do cliente Platinum?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | FAQ vinformal | Seção: Item 15 — "Cliente diz que é Platinum. Existe esse tier?" | Similaridade: 13% ⚠️ DOCUMENTO INFORMAL]
+### Item 15 — "Cliente diz que é Platinum. Existe esse tier?"
+Não existe tier Platinum na NovaTech. Às vezes o cliente confunde com outra transportadora ou com o programa de fidelidade antigo que foi descontinuado em 2022. Oriente que nossos tiers são Gold, Silver e Standard e peça o número do contrato para verificar.
+
+[TRECHO 2 | POL-001 v3.1 | Seção: 3.5. Custos de devolução | Similaridade: 12%]
+### 3.5. Custos de devolução
+
+- Defeito ou erro da NovaTech (carga errada, avaria em trânsito): devolução sem custo para o cliente.
+- Desistência do cliente (carga correta, sem defeito): o custo do frete reverso é do cliente, calculado com os mesmos multiplicadores do frete original.
+- Prazo expirado (solicitação após 7 dias úteis): não elegível para devolução padrão. Encaminhar ao Comercial para negociação caso a caso.
+
+[TRECHO 3 | FAQ vinformal | Seção: Item 41 — "Qual a diferença entre SLA de resposta e SLA de resolução?" | Similaridade: 12% ⚠️ DOCUMENTO INFORMAL]
+### Item 41 — "Qual a diferença entre SLA de resposta e SLA de resolução?"
+Resposta é quando a gente dá o primeiro retorno ao cliente (mesmo que seja 'estamos verificando'). Resolução é quando o problema é efetivamente resolvido. O Gold tem 2h de resposta e 24h de resolução. Silver é 4h e 48h. Standard é 8h e 72h. Para incidentes críticos, os prazos são menores — veja a tabela SLA-2024.
+
+[TRECHO 4 | SLA-2024 v2024.1 | Seção: SLA-2024 — Tabela de SLA por Tipo de Cliente | Similaridade: 8%]
+# SLA-2024 — Tabela de SLA por Tipo de Cliente
+
+**Versão:** 2024.1
+**Última atualização:** 02/01/2024
+**Responsável:** Diretoria Comercial + Diretoria de Operações
+**Classificação:** Documento contratual — os SLAs listados aqui são compromissos formais com o cliente
+
+[TRECHO 5 | POL-001 v3.1 | Seção: 3.3. Procedimento de devolução | Similaridade: 7%]
+### 3.3. Procedimento de devolução
+
+1. O cliente abre chamado no Portal do Cliente (portal.novatech.com.br), selecionando a categoria "Devolução de Mercadoria".
+2. O chamado deve incluir: número do CT-e (Conhecimento de Transporte Eletrônico), fotos da mercadoria no estado atual (mínimo 3 fotos: embalagem externa, etiqueta de identificação, e conteúdo), e motivo da devolução.
+3. O time de atendimento tem 4 horas úteis para triagem do chamado (verificar elegibilidade, documentação e prazo).
+4. Se elegível, a coleta reversa é agendada em até 2 dias úteis após aprovação.
+5. O reembolso ou crédito é processado em até 5 dias úteis após o recebimento da mercadoria devolvida no centro de distribuição.
+
+
+---
+PERGUNTA DO ATENDENTE: Qual o SLA do cliente Platinum?
+
+RESPOSTA (com citação de fonte obrigatória):
+
+======================================================================
+TESTE Q7: Qual o valor do frete para 300kg para Salvador?
+======================================================================
+
+Você é o Assistente de Atendimento da NovaTech, empresa de logística.
+Responda dúvidas dos atendentes com base EXCLUSIVAMENTE nos trechos de documentação abaixo.
+
+REGRAS OBRIGATÓRIAS:
+1. Cite SEMPRE a fonte (doc_id + seção) para qualquer informação fornecida.
+2. NUNCA invente prazos, valores, multiplicadores ou procedimentos.
+   Se a informação não estiver nos trechos, diga: "Não encontrei essa informação na documentação disponível."
+3. Quando houver duas versões do mesmo documento (PROC-042 v1 vs v2), use a MAIS RECENTE (v2),
+   exceto para chamados abertos antes de 01/12/2023.
+4. Documentos do tipo "informal" (FAQ) devem ser usados com cautela — indique isso ao atendente
+   e recomende confirmar na documentação normativa.
+5. Responda em português formal e objetivo.
+6. Para carga perigosa: reforce SEMPRE que o processo é especial e o cliente deve contatar ramal 4500.
+
+TRECHOS DE DOCUMENTAÇÃO RECUPERADOS:
+[TRECHO 1 | PROC-042-v1 v1.0 | Seção: 2. Fórmula de cálculo | Similaridade: 19%]
+## 2. Fórmula de cálculo
+
+O frete especial é calculado como:
+
+Valor do frete = Valor base × Multiplicador regional × Fator de peso
+
+Onde:
+- Valor base = tarifa publicada na tabela mensal de fretes.
+- Multiplicador regional = fator aplicado conforme a região de destino (seção 2.1).
+- Fator de peso = 1.0 para cargas de 500kg a 1.000kg; 1.2 para cargas de 1.001kg a 3.000kg; 1.5 para cargas acima de 3.000kg.
+
+[TRECHO 2 | PROC-042-v2 v2.0 | Seção: 2. Fórmula de cálculo | Similaridade: 19%]
+## 2. Fórmula de cálculo
+
+O frete especial é calculado como:
+
+Valor do frete = Valor base × Multiplicador regional × Fator de peso
+
+Onde:
+- Valor base = tarifa publicada na tabela mensal de fretes.
+- Multiplicador regional = fator aplicado conforme a região de destino (seção 2.1).
+- Fator de peso = 1.0 para cargas de 500kg a 1.000kg; 1.15 para cargas de 1.001kg a 3.000kg; 1.4 para cargas acima de 3.000kg.
+
+[TRECHO 3 | POL-001 v3.1 | Seção: 3.5. Custos de devolução | Similaridade: 14%]
+### 3.5. Custos de devolução
+
+- Defeito ou erro da NovaTech (carga errada, avaria em trânsito): devolução sem custo para o cliente.
+- Desistência do cliente (carga correta, sem defeito): o custo do frete reverso é do cliente, calculado com os mesmos multiplicadores do frete original.
+- Prazo expirado (solicitação após 7 dias úteis): não elegível para devolução padrão. Encaminhar ao Comercial para negociação caso a caso.
+
+[TRECHO 4 | SLA-2024 v2024.1 | Seção: 4. Penalidades por descumprimento | Similaridade: 12%]
+## 4. Penalidades por descumprimento
+
+- Primeira violação de SLA no mês: registro interno, sem impacto contratual.
+- Segunda violação no mesmo mês: crédito de 5% sobre o valor do frete do chamado afetado.
+- Terceira violação ou mais no mesmo mês: crédito de 10% + reunião obrigatória com o gerente de conta (Gold) ou gerente de operações (Silver/Standard).
+
+[TRECHO 5 | FAQ vinformal | Seção: Item 22 — "Cliente quer saber sobre seguro de carga. O que falar?" | Similaridade: 11% ⚠️ DOCUMENTO INFORMAL]
+### Item 22 — "Cliente quer saber sobre seguro de carga. O que falar?"
+A NovaTech oferece seguro de carga como adicional. O valor é 0,3% do valor declarado da mercadoria para cargas padrão e 0,8% para cargas perigosas. Detalhe: isso vale para contratos a partir de 2023. Contratos mais antigos podem ter percentuais diferentes — confirme com o Comercial.
+
+
+---
+PERGUNTA DO ATENDENTE: Qual o valor do frete para 300kg para Salvador?
+
+RESPOSTA (com citação de fonte obrigatória):
