@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json.schemastore.org/mcp.json",
+  "_comment": "MCP servers para novatech-assistant | Least-privilege por design | 2026-06-13",
+  "mcpServers": {
+
+    "novatech-docs": {
+      "_purpose": "Leitura da documentação de negócio NovaTech (Anexo A) — READ-ONLY",
+      "_consumers": ["orchestrator-agent", "retrieval-agent", "qa-agent"],
+      "_scope_justification": "Apenas docs/novatech/: agentes de negócio não precisam ver src/, .env, nem corpus. Read-only porque documentos de negócio são inputs, não saídas do agente.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\DB1\\DGS\\AI First\\Prática 2\\Anexo-D-starter-repo-novatech-assistant\\novatech-assistant\\docs\\novatech"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "novatech-corpus": {
+      "_purpose": "Leitura do corpus de chunks para retrieval semântico (Anexo B) — READ-ONLY",
+      "_consumers": ["retrieval-agent"],
+      "_scope_justification": "Apenas data/retrieval-corpus/: o retrieval agent lê chunks indexados mas jamais os modifica — chunks são gerados por pipeline separado de ingestão. Escopo mínimo impede acesso a src/ ou docs/.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\DB1\\DGS\\AI First\\Prática 2\\Anexo-D-starter-repo-novatech-assistant\\novatech-assistant\\data\\retrieval-corpus"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "novatech-code": {
+      "_purpose": "Leitura e ESCRITA do código-fonte e specs do repositório — READ-WRITE (src/ apenas)",
+      "_consumers": ["coding-agent", "github-copilot"],
+      "_scope_justification": "Apenas src/: coding agents precisam ler/escrever código, mas não devem alcançar docs/, data/, .env, .git, .mcp/ ou raiz do projeto. Exclui segredos e configs sensíveis por design de escopo.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\DB1\\DGS\\AI First\\Prática 2\\Anexo-D-starter-repo-novatech-assistant\\novatech-assistant\\src"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "novatech-git": {
+      "_purpose": "Histórico, branches e diff do repositório — auditoria e rastreabilidade",
+      "_consumers": ["orchestrator-agent", "coding-agent", "audit-agent"],
+      "_scope_justification": "Escopo restrito ao repositório do projeto. O git server expõe tools de leitura (log, status, diff, show) e escrita (commit, branch, checkout) — em produção recomenda-se wrapper que bloqueia git_commit sem aprovação humana.",
+      "command": "uvx",
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "C:\\DB1\\DGS\\AI First\\Prática 2\\Anexo-D-starter-repo-novatech-assistant\\novatech-assistant"
+      ],
+      "env": {}
+    },
+
+    "novatech-memory": {
+      "_purpose": "Memória persistente de decisões arquiteturais e linguagem ubíqua do projeto",
+      "_consumers": ["orchestrator-agent", "all-agents"],
+      "_scope_justification": "Memory server não acessa o filesystem do projeto — persiste grafo de conhecimento em memória/disco próprio. Sem escopo de arquivo; risco principal é poluição do grafo com informações incorretas (mitigado por naming conventions e revisão periódica).",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {
+        "MEMORY_FILE_PATH": "C:\\DB1\\DGS\\AI First\\Prática 2\\Anexo-D-starter-repo-novatech-assistant\\novatech-assistant\\memory\\knowledge-graph.json"
+      }
+    },
+
+    "novatech-search": {
+      "_purpose": "Busca local rápida durante desenvolvimento — search em arquivos do projeto",
+      "_consumers": ["developer", "coding-agent"],
+      "_scope_justification": "Everything server para busca local em dev. ATENÇÃO: este server tem escopo mais amplo (raiz do projeto) — usado apenas em ambiente de desenvolvimento, NUNCA em CI/CD ou produção. Em dev, o benefício de busca rápida supera o risco controlado.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+      ],
+      "env": {},
+      "_env_note": "Desabilitar em .mcp/mcp.production.json — não incluir em ambientes de CI/CD"
+    }
+
+  },
+
+  "_security_notes": {
+    "read_only_enforcement": "filesystem servers para docs/novatech e data/retrieval-corpus recebem APENAS essas pastas — qualquer tentativa de navegar para fora retorna erro de permissão",
+    "no_env_exposure": "nenhum server recebe a raiz do projeto ou pasta pai — .env, secrets e configs não estão acessíveis",
+    "git_write_gate": "git server expõe tools de escrita; mitigação: usar git_status/git_log/git_show/git_diff apenas em produção; git_commit requer aprovação humana via PR",
+    "everything_dev_only": "novatech-search é exclusivo para desenvolvimento local — remover em ambientes compartilhados"
+  }
+}
